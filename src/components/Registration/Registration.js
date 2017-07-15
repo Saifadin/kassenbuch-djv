@@ -66,14 +66,12 @@ class Registration extends Component {
   }
 
   _handleRegisterEmailChange(e) {
-    console.log(e.target.value);
     this.setState({
       username: e.target.value,
     });
   }
 
   _handleRegisterPasswordChange(e) {
-    console.log(e.target.value);
     this.setState({
       password: e.target.value,
     });

@@ -1,0 +1,28 @@
+@import "../../styles/main";
+
+.Home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  padding: 16px;
+  &__logo {
+    text-align: center;
+    width: 100%;
+    &--img {
+      max-width: 350px;
+      margin-bottom: 32px;
+    }
+  }
+  &__login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  &__noLogin {
+    text-align: center;
+  }
+}

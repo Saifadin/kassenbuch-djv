@@ -1,4 +1,48 @@
+@import "../../../styles/main";
+
 .Header {
-  height: 50px;
-  background-color: #aaa;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: lighten($djv-grey, 5);
+}
+
+.Header__wrapper {
+  height: 64px;
+  display: flex;
+  flex: 1;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  max-width: 1200px;
+}
+
+.Header__logo {
+  height: 48px;
+}
+
+.Header__navigation {
+  text-align: right;
+  flex: 1;
+  align-self: center;
+}
+
+.Header-Navigation__ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+.Header-Navigation__li {
+  padding: 8px;
+}
+
+.Header-Navigation__link {
+  text-decoration: none;
+  color: $white;
+  cursor: pointer;
+  &:hover {
+    color: #000;
+  }
 }

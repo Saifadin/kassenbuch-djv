@@ -1,0 +1,19 @@
+@import "../../../styles/main";
+
+.FloatingButton {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 16px;
+  right: 16px;
+  height: 64px;
+  width: 64px;
+  border-radius: 100%;
+  background-color: $djv-red;
+  border: 1px solid darken($djv-red, 10);
+  color: $white;
+  &:hover {
+    background-color: lighten($djv-red, 5);
+  }
+}

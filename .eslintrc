@@ -3,6 +3,9 @@
     "document": true,
     "localStorage": true,
   },
+  "settings": {
+    "import/resolver": "webpack"
+  },
   "extends": "airbnb",
   "rules": {
     "react/jsx-filename-extension": [0],
@@ -12,5 +15,6 @@
     "no-useless-constructor": [0],
     "arrow-parens": [0],
     "no-underscore-dangle": [0],
+    "max-len": [1, 200]
   }
 }

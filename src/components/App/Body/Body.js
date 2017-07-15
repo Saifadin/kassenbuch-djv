@@ -10,7 +10,9 @@ class Body extends Component {
   render() {
     return (
       <div className="Body">
-        {this.props.children}
+        <div className="Body__wrapper">
+          {this.props.children}
+        </div>
       </div>
     );
   }

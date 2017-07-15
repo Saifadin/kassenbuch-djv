@@ -8,9 +8,8 @@ import Body from './Body/Body';
 import Header from './Header/Header';
 
 import Registration from '../Registration/Registration';
-import Login from '../Login/Login';
 
-import './App.css';
+import './App.scss';
 
 const userQuery = gql`
   query GetUser($id: ID!) {
@@ -20,12 +19,6 @@ const userQuery = gql`
     }
   }
 `;
-
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-);
 
 const Dashboard = () => (
   <div>
@@ -85,7 +78,6 @@ class App extends Component {
             user: result.data.getUser,
             loading: false,
           });
-          // this.props.history.push('/home');
         }
       },
       error(error) {
@@ -109,10 +101,8 @@ class App extends Component {
         <Header />
 
         <Body>
-          <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Registration} />
-          <Route path="/dashboard" component={Dashboard} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route path="/dashboard/register" component={Registration} />
         </Body>
       </div>
     );
