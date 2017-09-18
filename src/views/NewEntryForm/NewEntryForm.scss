@@ -1,0 +1,35 @@
+@import '../../styles/main';
+
+.NewEntryForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__form {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &--isInvalid {
+      .LabelInput {
+        border-color: $djv-red;
+      }
+    }
+  }
+  &__button {
+    height: 44px;
+    appearance: none;
+    outline: none;
+    border: 2px solid $djv-green;
+    border-radius: 2px;
+    background-color: $djv-green;
+    color: $white;
+    font-size: 14px;
+    cursor: pointer;
+    &:hover {
+      background-color: lighten($djv-green, 3);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

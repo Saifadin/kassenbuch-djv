@@ -1,0 +1,58 @@
+@import '../../styles/main';
+
+.Entry {
+  display: flex;
+  height: 64px;
+  width: 100%;
+  padding: 8px 16px;
+  background-color: lighten($djv-grey, 55);
+  line-height: 24px;
+  border-left: 3px solid lighten($djv-grey, 55);
+  border-right: 3px solid lighten($djv-grey, 55);
+  margin-bottom: 1px;
+  transition: all 1s ease-in;
+  align-items: center;
+  &--positiveAmount {
+    border-left: 3px solid $djv-green;
+  }
+  &--negativeAmount {
+    border-left: 3px solid $djv-red;
+  }
+
+  &__icon {
+    visibility: hidden;
+    opacity: 0;
+    width: 0;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  &:hover {
+    .Entry__icon {
+      visibility: visible;
+      opacity: 1;
+      line-height: 48px;
+      width: 36px;
+      text-align: right;
+    }
+  }
+
+  &__title {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  &__kpi {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+
+  &__title, &__amount {
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  &__user {
+    font-style: italic;
+  }
+}

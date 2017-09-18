@@ -1,0 +1,54 @@
+@import '../../styles/main';
+
+.Login {
+  &__form {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &--isInvalid {
+      .LabelInput {
+        border-color: $djv-red;
+      }
+    }
+  }
+  &__input {
+    box-shadow: none;
+    outline: none;
+    font-size: 12px;
+    line-height: 24px;
+    margin-bottom: 24px;
+    width: 100% !important;
+    &:focus {
+      outline: none;
+    }
+    &--top {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom: 1px solid $djv-green;
+    }
+    &--bottom {
+      border-top: none;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      margin-bottom: 8px;
+    }
+  }
+  &__button {
+    height: 44px;
+    appearance: none;
+    outline: none;
+    border: 2px solid $djv-green;
+    border-radius: 2px;
+    background-color: $djv-green;
+    color: $white;
+    font-size: 14px;
+    cursor: pointer;
+    &:hover {
+      background-color: lighten($djv-green, 3);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
