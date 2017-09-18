@@ -4,10 +4,13 @@ import gql from 'graphql-tag';
 
 import client from '../../client';
 
+import NewEntryForm from '../NewEntryForm/NewEntryForm';
+import AllEntries from '../AllEntries/AllEntries';
+
 import Body from './Body/Body';
 import Header from './Header/Header';
 
-import Registration from '../Registration/Registration';
+import Registration from '../../components/Registration/Registration';
 
 import './App.scss';
 
@@ -16,15 +19,16 @@ const userQuery = gql`
     getUser(id: $id) {
       id
       username
+      entries(last: 10) {
+        edges {
+          node {
+            id
+          }
+        }
+      }
     }
   }
 `;
-
-const Dashboard = () => (
-  <div>
-    <h2>Overview</h2>
-  </div>
-);
 
 class App extends Component {
   constructor(props) {
@@ -101,7 +105,8 @@ class App extends Component {
         <Header />
 
         <Body>
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/dashboard" component={AllEntries} />
+          <Route exact path="/dashboard/new-entry" component={NewEntryForm} />
           <Route path="/dashboard/register" component={Registration} />
         </Body>
       </div>

@@ -1,8 +1,11 @@
 @import '../../styles/main';
 
-.Login {
+.EditEntry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   &__form {
-    max-width: 500px;
+    max-width: 700px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -10,28 +13,6 @@
       .LabelInput {
         border-color: $djv-red;
       }
-    }
-  }
-  &__input {
-    box-shadow: none;
-    outline: none;
-    font-size: 12px;
-    line-height: 24px;
-    margin-bottom: 24px;
-    width: 100% !important;
-    &:focus {
-      outline: none;
-    }
-    &--top {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      border-bottom: 1px solid $djv-green;
-    }
-    &--bottom {
-      border-top: none;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      margin-bottom: 8px;
     }
   }
   &__button {

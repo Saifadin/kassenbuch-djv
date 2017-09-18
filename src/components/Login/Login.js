@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
-import PropTypes from 'prop-types';
+import TextField from 'material-ui/TextField';
 
-import LabelInput from '../LabelInput/LabelInput';
+import PropTypes from 'prop-types';
 
 import './Login.scss';
 
@@ -20,7 +20,7 @@ const LoginUserMutation = gql `
   }
 `;
 
-class Login extends React.Component {
+class Login extends Component {
 
   constructor(props) {
     super(props);
@@ -91,8 +91,8 @@ class Login extends React.Component {
 
     return (
       <form className={`Login__form ${formInvalidClass}`}>
-        <LabelInput type="email" position="top" onChange={this._handleLoginEmailChange} labelIcon="user" labelText="Benutzername" required="true" />
-        <LabelInput type="password" position="bottom" onChange={this._handleLoginPasswordChange} labelIcon="lock" labelText="Passwort" required="true" />
+        <TextField className="Login__input" type="email" onChange={this._handleLoginEmailChange} floatingLabelText="Benutzername" required="true" />
+        <TextField className="Login__input" type="password" onChange={this._handleLoginPasswordChange} floatingLabelText="Passwort" required="true" />
         <input type="submit" className="Login__button" onClick={this.loginUser} />
       </form>
     );

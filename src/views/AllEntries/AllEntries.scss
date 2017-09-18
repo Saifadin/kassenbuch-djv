@@ -1,0 +1,48 @@
+@import "../../styles/main";
+
+.AllEntries {
+  max-height: calc(100vh - 64px);
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 40px;
+  &__header {
+    display: flex;
+    line-height: 24px;
+    padding: 8px 16px;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 3px;
+    flex: 1;
+  }
+  &__filter {
+    cursor: pointer;
+    color: $djv-green;
+    &:hover {
+
+    }
+  }
+
+  &__entries {
+    overflow: scroll;
+    height: 100%;
+    padding-bottom: 38px;
+  }
+  &__sum {
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 4px 16px;
+    line-height: 32px;
+    background-color: $djv-grey;
+    color: $white;
+    display: flex;
+    &-title {
+      font-weight: bold;
+      flex: 1;
+    }
+  }
+}

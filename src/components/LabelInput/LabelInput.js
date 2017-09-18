@@ -37,8 +37,8 @@ class LabelInput extends Component {
           {this.props.labelIcon && <FontAwesome className="LabelInput__label--icon" name={this.props.labelIcon} />} { this.props.labelText }
         </label>
         { this.props.type !== 'area' ?
-          <input id={this.state.htmlFor} className={`LabelInput__input ${inputPositionClassName}`} type={this.props.type} required={this.props.required} onChange={this.props.onChange} /> :
-          <textarea id={this.state.htmlFor} className={`LabelInput__input LabelInput__input--area ${inputPositionClassName}`} required={this.props.required} onChange={this.props.onChange} />
+          <input id={this.state.htmlFor} className={`LabelInput__input ${inputPositionClassName}`} type={this.props.type} required={this.props.required} onChange={this.props.onChange} value={this.props.value} /> :
+          <textarea id={this.state.htmlFor} className={`LabelInput__input LabelInput__input--area ${inputPositionClassName}`} required={this.props.required} onChange={this.props.onChange} value={this.props.value} />
         }
       </div>
     );

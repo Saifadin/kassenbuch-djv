@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { ApolloProvider } from 'react-apollo';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import client from './client';
-import history from './history';
+// import history from './history';
 
-import App from './components/App/App';
+import App from './views/App/App';
 import Home from './views/Home/Home';
 import './index.scss';
 
@@ -20,11 +21,13 @@ const ProtectedAppRoute = () => (
 );
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <Router history={history}>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <ProtectedAppRoute />
-      </Switch>
-    </Router>
-  </ApolloProvider>, document.getElementById('root'));
+  <MuiThemeProvider>
+    <ApolloProvider client={client}>
+      <HashRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <ProtectedAppRoute />
+        </Switch>
+      </HashRouter>
+    </ApolloProvider>
+  </MuiThemeProvider>, document.getElementById('root'));
